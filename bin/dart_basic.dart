@@ -2,18 +2,18 @@ import 'dart:io';
 
 void main(List<String> arguments) {
 
-  int i = 0;
-  while (i < 5) {
-    print('halo ke ' + i.toString());
-    i += 1;
+  int j = 5;
+  while (j < 5) {
+    print('halo ke ' + j.toString());
+    j += 1;
   }
 
   print('========================');
 
-  int x = 0;
+  int y = 5;
   do {
-    print("dodo ke " + x.toString());
-    x += 1;
-  } while (x < 5);
+    print("dodo ke " + y.toString());
+    y += 1;
+  } while (y < 5);
 
 }
