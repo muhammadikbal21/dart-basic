@@ -6,9 +6,7 @@ void main(List<String> arguments) {
 
   int number = int.tryParse(stdin.readLineSync()); // parsing variable tipe string menjadi integer
   String output;
-
-  output = (number > 0) ? "positif" : "negatif atau nol";
-
-  print(output);
+  
+  print((number > 0) ? number : number * -1);
 
 }
