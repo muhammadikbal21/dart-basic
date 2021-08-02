@@ -1,11 +1,17 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
+  
   print('Input angka: ');
 
-  String input = stdin.readLineSync();
-  // int number = int.tryParse(input); // parsing variable tipe string menjadi integer
-  double number = double.tryParse(input); // parsing variable tipe string menjadi double
+  int number = int.tryParse(stdin.readLineSync()); // parsing variable tipe string menjadi integer
 
-  print(number + 10);
+  if (number > 0) {
+    print('positif');
+  } else if (number < 0) {
+    print('negatif');
+  } else {
+    print('nol');
+  }
+
 }
