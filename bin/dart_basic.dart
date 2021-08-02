@@ -5,8 +5,21 @@ void main(List<String> arguments) {
   print('Input angka: ');
 
   int number = int.tryParse(stdin.readLineSync()); // parsing variable tipe string menjadi integer
-  String output;
   
-  print((number > 0) ? number : number * -1);
+  switch (number) {
+    case 0:
+      print('nol');
+      break;
+    case 1:
+      print(number);
+      print('satu');
+      break;
+    case 2:
+      print('dua');
+      break;
+    default:
+      print("bilangan lain");
+      break;
+  }
 
 }
