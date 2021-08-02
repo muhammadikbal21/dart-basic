@@ -1,19 +1,18 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
-
-  int j = 5;
-  while (j < 5) {
-    print('halo ke ' + j.toString());
-    j += 1;
+  
+  int k = 0;
+  while (k < 5) {
+    print('unary increment ' + k.toString());
+    k++;
   }
 
-  print('========================');
+  print('====================');
 
-  int y = 5;
-  do {
-    print("dodo ke " + y.toString());
-    y += 1;
-  } while (y < 5);
+  while (k > 0) {
+    print('unary decrement ' + k.toString());
+    k--;
+  }
 
 }
