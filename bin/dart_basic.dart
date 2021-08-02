@@ -2,9 +2,18 @@ import 'dart:io';
 
 void main(List<String> arguments) {
 
-  print('cara 5');
-  for (int counter = 9; counter >= 1; counter -= 2) {
-    print('halo ' + counter.toString()); // jika variable bertipe integer, harus menggunakan toString untuk meng-print nya
+  int i = 0;
+  while (i < 5) {
+    print('halo ke ' + i.toString());
+    i += 1;
   }
+
+  print('========================');
+
+  int x = 0;
+  do {
+    print("dodo ke " + x.toString());
+    x += 1;
+  } while (x < 5);
 
 }
