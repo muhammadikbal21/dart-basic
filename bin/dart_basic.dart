@@ -10,9 +10,17 @@ String say(String from, String message, {String to, String appName}) {
   return from + " say " + message + ((to != null) ? " to " + to : "") + ((appName != null) ? " via " + appName : "");
 }
 
+// ini contoh penggunaan position parameter
+String say2(String from, String message, [String to, String appName]) {
+  return from + " say " + message + ((to != null) ? " to " + to : "") + ((appName != null) ? " via " + appName : "");
+}
+
 void main(List<String> arguments) {
   
-  print(say("Ikbal", "Hello")); // tidak diberi argument ke named parameter
-  print(say("Ikbal", "Hello", to: "Bale", appName: "Whatsapp")); // jika diberi argument ke named parameter
+  // kelebihan named parameter adalah posisi argument tidak harus sesuai dengan parameter di function asalkan disertakan nama parameternya agar tidak rancu / membingungkan
+  print('named parameter: ' + say("Ikbal", "Hello", appName: "Whatsapp"));
+
+  // position parameter harus menetapkan argumentnya sesuai dengan parameter di function
+  print('position parameter: ' + say2("Ikbal", "Hello", "Bale", "Whatsapp"));
 
 }
