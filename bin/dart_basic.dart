@@ -6,7 +6,8 @@ void main(List<String> arguments) {
   List<int> list = [1, 2, 3];
 
   myList.addAll(list);
-  myList.insert(0, 100); // insert untuk menyisipkan elemen kedalam List menggunakan indeks
+  // iterable adalah kumpulan elemen elemen atau disebut dengan List
+  myList.insertAll(2, [20, 30]); // insertAll untuk menyisipkan elemen kedalam List menggunakan indeks dan iterable
 
   myList.forEach((bilangan) {
     print(bilangan);
