@@ -3,12 +3,12 @@ import 'dart:io';
 void main(List<String> arguments) {
   
   List<int> myList = [];
-  List<int> list = [3, 1, 2, 3];
+  List<int> list = [0, 1, 2, 3, 20, 30, 40, 50];
 
   myList.addAll(list);
-  // iterable adalah kumpulan elemen elemen atau disebut dengan List
-  myList.insertAll(2, [20, 30]); // insertAll untuk menyisipkan elemen kedalam List menggunakan indeks dan iterable
-  myList.removeAt(0); // menghapus elemen menggunakan indeks
+  // removeRange bersifat eksklusif, artinya jarak indeks terakhir elemennya tidak termasuk
+  // disini 7 adalah jarak indeks terakhir, maka elemennya tidak ikut terhapus
+  myList.removeRange(4, 7); // menghapus dengan jarak index yang diinginkan
 
   myList.forEach((bilangan) {
     print(bilangan);
