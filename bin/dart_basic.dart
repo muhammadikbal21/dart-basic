@@ -8,7 +8,7 @@ void main(List<String> arguments) {
   myList.addAll(list);
   // iterable adalah kumpulan elemen elemen atau disebut dengan List
   myList.insertAll(2, [20, 30]); // insertAll untuk menyisipkan elemen kedalam List menggunakan indeks dan iterable
-  myList.removeLast(); // menghapus elemen terakhir di List
+  myList.removeAt(0); // menghapus elemen menggunakan indeks
 
   myList.forEach((bilangan) {
     print(bilangan);
