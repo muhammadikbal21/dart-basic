@@ -10,6 +10,11 @@ void main(List<String> arguments) {
   // disini kita menggunakan logic untuk mendapatkan nilai ganjil, dan akan dihapus jika elemen tersebut bernilai ganjil
   myList.removeWhere((number) => number % 2 != 0);
 
+  // contains adalah untuk memastikan bahwa List berisi elemen yang diinginkan
+  if (myList.contains(50)) {
+    print("ada!");
+  }
+
   myList.forEach((bilangan) {
     print(bilangan);
   });
