@@ -4,8 +4,8 @@ class Character {
 
   int get healthPoint => _healthPoint;
   set healthPoint(int value) {
-    if (value < 0) {
-      value *= -1;
+    if (value < 5) {
+      value = 5;
     }
     _healthPoint = value;
   }
