@@ -4,6 +4,7 @@ import 'package:dart_basic/character.dart';
 import 'package:dart_basic/drink_ability_mixin.dart';
 import 'package:dart_basic/flying_monster.dart';
 import 'package:dart_basic/hero.dart';
+import 'package:dart_basic/knight.dart';
 import 'package:dart_basic/monster.dart';
 import 'package:dart_basic/monster_kecoa.dart';
 import 'package:dart_basic/monster_ubur_ubur.dart';
@@ -23,8 +24,13 @@ void main(List<String> arguments) async {
   // melooping array dengan parentnya
   for (Monster m in monsters) {
     if (m is DrinkAbilityMixin) {
-      print((m as DrinkAbilityMixin).drink());
+      print((m as DrinkAbilityMixin).drink()); // ini tidak akan dicetak karena mixin hanya dikhususkan pada class Hero
     }
   }
+
+  print('====================');
+
+  Knight knight = Knight();
+  print('Kesatria haus: ' + knight.drink());
 
 }
