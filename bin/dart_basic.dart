@@ -1,27 +1,29 @@
 import 'dart:io';
 
+import 'package:dart_basic/character.dart';
 import 'package:dart_basic/hero.dart';
 import 'package:dart_basic/monster.dart';
+import 'package:dart_basic/monster_kecoa.dart';
 import 'package:dart_basic/monster_ubur_ubur.dart';
 
 void main(List<String> arguments) async {
 
   Hero alucard = Hero();
   Monster lord = Monster();
+  Monster monsterUburUbur = MonsterUburUbur(); // Monster adalah tipe Classnya, monsterUburUbur nama objectnya, MonsterUburUbur() adalah isi objectnya
   MonsterUburUbur uburUbur = MonsterUburUbur();
 
-  alucard.healthPoint = -10;
-  lord.healthPoint = 10;
-  uburUbur.healthPoint = 20; // karena class MonsterUburUbur mengextends class Monster, maka healthPoint dapat digunakan pada object ini
+  List<Monster> monsters = [];
 
-  print('Alucard HP: ' + alucard.healthPoint.toString());
-  print(alucard.killAMonster());
-  print('===================');
-  print('Lord HP: ' + lord.healthPoint.toString());
-  print(lord.eatHuman());
-  print('===================');
-  print('Ubur Ubur HP: ' + uburUbur.healthPoint.toString());
-  print(uburUbur.eatHuman()); // method eatHuman juga dapat digunakan pada object ini
-  print(uburUbur.swim());
+  // menambah elemen dengan object
+  // karena Monster adalah parent dari kelas MonsterUburUbur dan MonsterKecoa maka dapat kita tambahkan ke dalam array monsters
+  monsters.add(MonsterUburUbur());
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUburUbur());
+
+  // melooping array dengan parentnya
+  for (Monster m in monsters) {
+    print(m.eatHuman());
+  }
 
 }
