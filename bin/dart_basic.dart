@@ -23,7 +23,10 @@ void main(List<String> arguments) async {
 
   // melooping array dengan parentnya
   for (Monster m in monsters) {
-    print(m.eatHuman());
+    // dibawah ini perintah untuk mengecek apakah m adalah object MonsterUburUbur
+    if (m is MonsterUburUbur) {
+      print(m.swim());
+    }
   }
 
 }
