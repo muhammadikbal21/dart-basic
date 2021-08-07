@@ -1,13 +1,12 @@
 import 'dart:io';
 
 import 'person.dart';
+import 'student.dart';
 
 void main(List<String> arguments) {
 
-  Person person = Person(); // Person() adalah constructor yang berfungsi membuat object dari kelasnya
-  Person person2 = Person(name: 'Joko');
+  Person person = Student(); // object person dengan menggunakan constructor Student() dimana Student mengextends Person yang memiliki constructor default named parameter
 
   print('nama saya = ' + person.name);
-  print('nama saya = ' + person2.name);
 
 }
