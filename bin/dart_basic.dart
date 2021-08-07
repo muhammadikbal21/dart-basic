@@ -19,7 +19,7 @@ void main(List<String> arguments) async {
 
   // melooping array dengan parentnya
   for (Monster m in monsters) {
-    print(m.eatHuman());
+    print(m.move());
   }
 
 }
