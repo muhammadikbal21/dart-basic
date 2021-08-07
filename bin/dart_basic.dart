@@ -21,6 +21,9 @@ void main(List<String> arguments) async {
   monsters.add(MonsterKecoa());
   monsters.add(MonsterUburUbur());
 
+  // karena monsterUburUbur bertipe Monster (parent), untuk mendapatkan method secara spesifik harus menggunakan as sebagai childnya seperti dibawah ini
+  print((monsterUburUbur as MonsterUburUbur).swim());
+
   // melooping array dengan parentnya
   for (Monster m in monsters) {
     // dibawah ini perintah untuk mengecek apakah m adalah object MonsterUburUbur
