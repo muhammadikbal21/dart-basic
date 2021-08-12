@@ -6,11 +6,9 @@ import 'person.dart';
 import 'student.dart';
 
 void main(List<String> arguments) {
-  var p = IgnoreParameter('Ikbal', doingHobby: ikbalsHobby);
+  var p = IgnoreParameter('Ikbal', doingHobby: (String name) {
+    print('$name is swimming');
+  });
 
   p.takeARest();
-}
-
-void ikbalsHobby(String name) {
-  print('$name is swimming');
 }
