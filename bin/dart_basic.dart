@@ -1,14 +1,16 @@
 import 'dart:io';
 
+import 'package:dart_basic/ignore_parameter.dart';
+
 import 'person.dart';
 import 'student.dart';
 
 void main(List<String> arguments) {
+  var p = IgnoreParameter('Ikbal', doingHobby: ikbalsHobby);
 
-  Person person = Student(studentName: 'Joni'); // object person dengan menggunakan constructor Student() dimana Student mengextends Person yang memiliki constructor default named parameter
-  Person person2 = Student();
+  p.takeARest();
+}
 
-  print('nama saya = ' + person.name); // object ini menggunakan parameter 'Joni
-  print('nama saya = ' + person2.name); // object ini menggunakan default parameter yang ada di class Student
-
+void ikbalsHobby(String name) {
+  print('$name is swimming');
 }
