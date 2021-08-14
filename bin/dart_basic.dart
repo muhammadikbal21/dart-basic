@@ -1,22 +1,34 @@
 import 'dart:io';
 
-import 'package:dart_basic/generic_type.dart';
-
 void main(List<String> arguments) async {
-  // beberapa contoh penggunaan generic dengan tipe data berbeda (tipe class juga bisa)
-  var boxString = GenericType<String>('Hello', '123');
-  var boxInt = GenericType<int>(100, '123');
-  var boxDate = GenericType<DateTime>(DateTime.now(), '123');
-  var boxNewClassType = GenericType<NewClassType>(NewClassType('Ikbal'), '123'); // ini bertipe data class
+  MonsterInc monsterInc = MonsterInc(status: MonsterIncStatus.POISONED);
 
-  print(boxString.getData('123'));
-  print(boxInt.getData('123').toString());
-  print(boxDate.getData('123').toString());
-  print(boxNewClassType.getData('123').name); // ketika menggunakan class lain sebagai tipe datanya, harus mengakses fieldnya
+  monsterInc.move();
 }
 
-class NewClassType {
-  final String name;
+enum MonsterIncStatus {
+  NORMAL,
+  POISONED,
+  CONFUSED
+}
 
-  NewClassType(this.name);
+class MonsterInc {
+  final MonsterIncStatus status;
+
+  MonsterInc({this.status = MonsterIncStatus.NORMAL});
+
+  void move() {
+    switch (status) {
+      case MonsterIncStatus.NORMAL:
+        print('Monster Inc is moving');
+        break;
+      case MonsterIncStatus.POISONED:
+        print('Monster Inc cannot move. It is dying. It needs help');
+        break;
+      case MonsterIncStatus.CONFUSED:
+        print('Monster Inc is spinning. Dart language is confusing');
+        break;
+      default:
+    }
+  }
 }
