@@ -12,8 +12,10 @@ void main(List<String> arguments) async {
   // ini adalah contoh synchronus: melakukan perintah secara urutan
   print('job 1');
   print('job 2');
-  await p.getDataAsync(); // menggunakan await untuk menungu hasilnya keluar lalu akan lanjut ke perintah selanjutnya
-  print('job 3: ' + p.name);
+  // menggunakan then dimana ia menerima function (anonymous) yang akan dieksekusi, ia juga menerima parameter
+  p.getDataAsync().then((_) => { // karena method getDataAsync tidak mempunyai return maka kita akan mengabaikan parameternya menggunakan underscore (_)
+    print('job 3: ' + p.name) // ini akan dieksekusi ketika hasil delay dari function sudah selesai
+  });
   print('job 4');
   print('job 5');
   print('job 6');
