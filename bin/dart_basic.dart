@@ -12,7 +12,7 @@ void main(List<String> arguments) async {
   // ini adalah contoh synchronus: melakukan perintah secara urutan
   print('job 1');
   print('job 2');
-  p.getDataAsync(); // jika tidak menggunakan await maka method asynchronus akan akan lanjut ke perintah selanjutnya sampai hasil tunggunya keluar
+  await p.getDataAsync(); // menggunakan await untuk menungu hasilnya keluar lalu akan lanjut ke perintah selanjutnya
   print('job 3: ' + p.name);
   print('job 4');
   print('job 5');
