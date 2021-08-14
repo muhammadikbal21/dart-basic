@@ -11,6 +11,11 @@ void main(List<String> arguments) {
     CustomSortAndForEach('Merchant', 55),
   ];
 
+  // sort memiliki function compare untuk membandingkan element dengan tipe kembalian integer
+  // jika nilai kembaliannya negatif, maka object pertama akan diletakkan disebelah kiri dari object kedua
+  // jika nilai kembaliannya positif, maka object pertama akan diletakkan disebelah kanan dari object kedua
+  person.sort((p1, p2) => p1.age - p2.age); // mengurutkan age secara menaik (ascending)
+
   person.forEach((element) {
     print(element.role + ' - ' + element.age.toString());
   });
