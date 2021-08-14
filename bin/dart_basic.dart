@@ -1,24 +1,24 @@
-import 'package:meta/meta.dart';
+void main(List<String> arguments) {
+  List<CustomSortAndForEach> person = [
+    CustomSortAndForEach('Administrator', 32),
+    CustomSortAndForEach('User', 52),
+    CustomSortAndForEach('Administrator', 20),
+    CustomSortAndForEach('Merchant', 52),
+    CustomSortAndForEach('Administrator', 23),
+    CustomSortAndForEach('User', 22),
+    CustomSortAndForEach('Merchant', 22),
+    CustomSortAndForEach('User', 12),
+    CustomSortAndForEach('Merchant', 55),
+  ];
 
-void main(List<String> arguments) async {
-  RequiredAssertTryCatch p;
-  
-  // try catch berfungsi agar menghandle error dengan tidak langsung men-stop programnya jika di debug
-  try { // try : statement yang memungkinkan mengeluarkan error
-    p = RequiredAssertTryCatch(name: null); // ini harus diisi, karena constructor menggunakan assert, jika tidak maka akan muncul error
-  } catch (e) { // catch: dijalankan jika ada errornya, menangkap errornya
-    print(e);
-  }
-
-  print('hello');
+  person.forEach((element) {
+    print(element.role + ' - ' + element.age.toString());
+  });
 }
 
-class RequiredAssertTryCatch {
-  final String name;
+class CustomSortAndForEach {
+  final String role;
   final int age;
 
-  RequiredAssertTryCatch({@required this.name, this.age = 0}) { // required valuenya wajib diisi
-    // assert menegaskan kalau parameter harus ada valuenya, jika di debug (F5) maka akan kelihatan errornya dan program dipaksa berhenti
-    assert(name != null, "Kamu harus memberi nama"); 
-  }
+  CustomSortAndForEach(this.role, this.age);
 }
