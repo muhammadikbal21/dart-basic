@@ -1,7 +1,9 @@
 import 'dart:io';
 
 void main(List<String> arguments) async {
-  MonsterInc monsterInc = MonsterInc(status: MonsterIncStatus.POISONED)
+  MonsterInc monsterInc = MonsterInc(status: MonsterIncStatus.POISONED);
+  print('Ini Contoh Pemutus Object diatas'); // jika terjadi pemutusan seperti ini, kita dapat mengatasinya seperti dibawah ini
+  monsterInc
   ..move() // ini adalah cascade notation
   ..eat(); // cascade notation berfungsi untuk memanggil beberapa method terhadap satu buah object yang sama secara berurutan
 }
