@@ -1,10 +1,6 @@
 import 'dart:io';
 
-import 'package:dart_basic/ignore_parameter.dart';
-import 'package:dart_basic/static_keyword.dart';
-
-import 'person.dart';
-import 'student.dart';
+const phi = 3.14; // penggunaan const variable yang berada di top level, dan variablenya dapat digunakan dimana saja (class yang berbeda atau file yang berbeda)
 
 void main(List<String> arguments) async {
   // const variable dideklarasikan hanya sebagai static atau local variable (didalam method), dan di top level (diluar atau paling luar method)
@@ -28,12 +24,18 @@ void main(List<String> arguments) async {
   var f = ConstClass(number: 5);
   print('Identik atau Sama Persis kah? : '  + identical(e, f).toString());
 
+  print(phi);
+
 }
 
 class FinalClass {
   final int number; // jika final variable nya tidak diinisialisasi maka dapat melakukan cara seperti ini
+  static const myConst = 12; // variable const dapat menjadi static
 
-  FinalClass({this.number});
+  FinalClass({this.number}) {
+    const anotherConst = 14; // variable const sebagai local variable
+    print(anotherConst);
+  }
 }
 
 class ConstClass {
