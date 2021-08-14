@@ -2,8 +2,15 @@ import 'package:meta/meta.dart';
 
 void main(List<String> arguments) async {
   RequiredAssertTryCatch p;
-  p = RequiredAssertTryCatch(name: null); // ini harus diisi, karena constructor menggunakan assert, jika tidak maka akan muncul error
-  print(p.age);
+  
+  // try catch berfungsi agar menghandle error dengan tidak langsung men-stop programnya jika di debug
+  try { // try : statement yang memungkinkan mengeluarkan error
+    p = RequiredAssertTryCatch(name: null); // ini harus diisi, karena constructor menggunakan assert, jika tidak maka akan muncul error
+  } catch (e) { // catch: dijalankan jika ada errornya, menangkap errornya
+    print(e);
+  }
+
+  print('hello');
 }
 
 class RequiredAssertTryCatch {
