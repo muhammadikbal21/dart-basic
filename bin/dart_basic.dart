@@ -1,8 +1,9 @@
-import 'dart:developer';
+import 'services.dart';
 
 void main(List<String> arguments) {
-  Service service1 = Service();
-  Service service2 = Service();
+  // singleton akan merujuk object yang sama, ini akan menghemat banyak memori pada project
+  ServicesSingleton service1 = ServicesSingleton();
+  ServicesSingleton service2 = ServicesSingleton();
 
   if (service1 == service2) {
     print('sama');
