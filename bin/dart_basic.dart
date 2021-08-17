@@ -1,9 +1,17 @@
 void main(List<String> arguments) {
   
-  // S : Single Responsibility Principle
-  // O : Open or Close Principle
-  // L : Liskov Substitution Principle
-  // I : Interface Segregation Principle
-  // D : Depedency Inversion Principle
-  
+  Hero a = Hero(10);
+  Hero b = Hero(20);
+
+  print((a + b).power); // ini adalah cara menjumlahkan integer dari object
+}
+
+class Hero {
+  final int power;
+
+  Hero(this.power);
+
+  Hero operator + (Hero other) {
+    return Hero(power + other.power);
+  }
 }
