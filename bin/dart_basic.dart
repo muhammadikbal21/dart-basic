@@ -1,9 +1,9 @@
 void main(List<String> arguments) {
   
   Hero a = Hero(10);
-  Hero b = Hero(10);
+  Hero b = Hero(9);
 
-  print((a + 12).power); 
+  print(a > b); 
 }
 
 class Hero {
@@ -25,6 +25,16 @@ class Hero {
   bool operator == (var other) { // membuat function ketika nilai parameternya sama maka akan mereturn true
     if (other is Hero) {
       if (other.power == power) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  bool operator > (var other) { // membuat operator perbandingan lebih besar (>) untuk membandingkan parameter objectnya
+    if (other is Hero) {
+      if (power > other.power) {
         return true;
       }
     }
