@@ -3,7 +3,7 @@ void main(List<String> arguments) {
   Hero a = Hero(10);
   Hero b = Hero(10);
 
-  print(a == b); // jika parameternya sama maka akan mencetak true
+  print((a + 12).power); 
 }
 
 class Hero {
@@ -11,8 +11,14 @@ class Hero {
 
   Hero(this.power);
 
-  Hero operator + (Hero other) { // membuat function agar dapat melakukan penjumlahan pada object
-    return Hero(power + other.power);
+  Hero operator + (var other) { // membuat function agar dapat melakukan penjumlahan pada object dan dapat menjumlahkan dengan integer lainnya yang bukan object
+    if (other is Hero) {
+      return Hero(power + other.power);
+    } else if (other is int) {
+      return Hero(power + other);
+    } else {
+      return this;
+    }
   }
 
   @override
