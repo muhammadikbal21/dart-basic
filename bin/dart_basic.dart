@@ -5,7 +5,15 @@ void main(List<String> arguments) {
 
   myDynamic = 'Hello';
   myDynamic = 12;
+  myDynamic = Person();
 
-  print(myDynamic);
+  // ketika kita mencari suggest yang ada didalam object tersebut, itu tidak dapat terlihat
+  // agar dapat mencari suggestnya kita harus menyertakan 'as' seperti dibawah ini
+  print((myDynamic as Person).name);
+  print('Muhammad ' + myDynamic.name); // langsung mengakses field dari object itu juga bisa, tapi akan susah jika fieldnya sudah banyak dan kita tidak dapat mencarinya menggunakan suggest
   
+}
+
+class Person {
+  String name = 'Ikbal';
 }
